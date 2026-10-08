@@ -1,0 +1,164 @@
+{
+  "tfidf_word_lr": {
+    "clean_val": {
+      "accuracy": 0.906,
+      "macro_f1": 0.711,
+      "weighted_f1": 0.897
+    },
+    "clean_test": {
+      "accuracy": 0.8801,
+      "macro_f1": 0.6154,
+      "weighted_f1": 0.8701
+    },
+    "cv5_macro_f1_mean_std": [
+      0.7181,
+      0.0344
+    ],
+    "cv5_accuracy_mean_std": [
+      0.8846,
+      0.0091
+    ],
+    "official_leaky_test": {
+      "accuracy": 0.7974,
+      "macro_f1": 0.9158,
+      "weighted_f1": 0.8062
+    }
+  },
+  "tfidf_char_svm": {
+    "clean_val": {
+      "accuracy": 0.9098,
+      "macro_f1": 0.7356,
+      "weighted_f1": 0.9018
+    },
+    "clean_test": {
+      "accuracy": 0.9251,
+      "macro_f1": 0.8121,
+      "weighted_f1": 0.9233
+    },
+    "cv5_macro_f1_mean_std": [
+      0.7554,
+      0.0472
+    ],
+    "cv5_accuracy_mean_std": [
+      0.897,
+      0.0143
+    ],
+    "official_leaky_test": {
+      "accuracy": 0.8017,
+      "macro_f1": 0.9129,
+      "weighted_f1": 0.8096
+    }
+  },
+  "tfidf_word+char_svm": {
+    "clean_val": {
+      "accuracy": 0.906,
+      "macro_f1": 0.7092,
+      "weighted_f1": 0.8968
+    },
+    "clean_test": {
+      "accuracy": 0.9064,
+      "macro_f1": 0.763,
+      "weighted_f1": 0.9029
+    },
+    "cv5_macro_f1_mean_std": [
+      0.7519,
+      0.0448
+    ],
+    "cv5_accuracy_mean_std": [
+      0.8953,
+      0.0103
+    ],
+    "official_leaky_test": {
+      "accuracy": 0.805,
+      "macro_f1": 0.9188,
+      "weighted_f1": 0.8136
+    }
+  },
+  "per_class_report_tfidf_word+char_svm": {
+    "politics": {
+      "precision": 0.8673469387755102,
+      "recall": 0.9239130434782609,
+      "f1-score": 0.8947368421052632,
+      "support": 92.0
+    },
+    "sport": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 85.0
+    },
+    "economy": {
+      "precision": 0.8,
+      "recall": 0.7142857142857143,
+      "f1-score": 0.7547169811320755,
+      "support": 28.0
+    },
+    "health": {
+      "precision": 0.8235294117647058,
+      "recall": 0.875,
+      "f1-score": 0.8484848484848485,
+      "support": 16.0
+    },
+    "entertainment": {
+      "precision": 1.0,
+      "recall": 0.9,
+      "f1-score": 0.9473684210526315,
+      "support": 10.0
+    },
+    "history": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "technology": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 5.0
+    },
+    "culture": {
+      "precision": 0.5,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.4,
+      "support": 3.0
+    },
+    "religion": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 2.0
+    },
+    "environment": {
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1-score": 0.8571428571428571,
+      "support": 4.0
+    },
+    "education": {
+      "precision": 0.7857142857142857,
+      "recall": 0.9166666666666666,
+      "f1-score": 0.8461538461538461,
+      "support": 12.0
+    },
+    "relationship": {
+      "precision": 1.0,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.9411764705882353,
+      "support": 9.0
+    },
+    "accuracy": 0.9063670411985019,
+    "macro avg": {
+      "precision": 0.8147158863545418,
+      "recall": 0.7335073038877388,
+      "f1-score": 0.7630372444438688,
+      "support": 267.0
+    },
+    "weighted avg": {
+      "precision": 0.9037489152964555,
+      "recall": 0.9063670411985019,
+      "f1-score": 0.9029350033060347,
+      "support": 267.0
+    }
+  }
+}
