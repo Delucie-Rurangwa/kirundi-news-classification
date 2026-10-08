@@ -22,6 +22,7 @@ Key ideas (be ready to explain these in the viva):
 import argparse
 import json
 import random
+import shutil
 from pathlib import Path
 
 import numpy as np
@@ -105,7 +106,7 @@ def main(a):
         print("class weights:", dict(zip(CLASS_NAMES, np.round(w, 2))))
 
     args = TrainingArguments(
-        output_dir=str(out / f"ckpt_{name}"),
+        output_dir=str(Path(a.ckpt_dir) / f"ckpt_{name}"),  # local disk, deleted after the run
         num_train_epochs=a.epochs,
         learning_rate=a.lr,
         per_device_train_batch_size=a.batch,
@@ -158,6 +159,7 @@ def main(a):
     if a.save_dir:
         trainer.save_model(a.save_dir)
         tok.save_pretrained(a.save_dir)
+    shutil.rmtree(args.output_dir, ignore_errors=True)  # checkpoints are ~1 GB each
 
 
 if __name__ == "__main__":
@@ -175,5 +177,6 @@ if __name__ == "__main__":
     p.add_argument("--weighted_loss", action="store_true")
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--save_dir", default=None, help="save final model here")
+    p.add_argument("--ckpt_dir", default="/tmp/ckpts", help="temporary checkpoint folder (local disk)")
     p.add_argument("--smoke", action="store_true", help="tiny fast run to test the setup")
     main(p.parse_args())
