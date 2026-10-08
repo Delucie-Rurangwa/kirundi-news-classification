@@ -21,6 +21,7 @@ Key ideas (be ready to explain these in the viva):
 """
 import argparse
 import json
+import math
 import random
 import shutil
 from pathlib import Path
@@ -113,7 +114,7 @@ def main(a):
         per_device_eval_batch_size=a.batch * 2,
         gradient_accumulation_steps=a.grad_accum,
         weight_decay=0.01,
-        warmup_ratio=0.1,
+        warmup_steps=int(0.1 * math.ceil(len(ds_tr) / (a.batch * a.grad_accum)) * a.epochs),
         eval_strategy="epoch",
         save_strategy="epoch",
         save_total_limit=1,
