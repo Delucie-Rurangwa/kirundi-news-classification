@@ -9,7 +9,6 @@ Individual NLP capstone (Summative Project Sep26): classify Kirundi news article
 | Live system (Hugging Face Space) | https://huggingface.co/spaces/delucie/kirundi-news-demo |
 | Fine-tuned model | https://huggingface.co/delucie/kirundi-news-afroxlmr |
 | Demo video | TODO: paste the video link |
-| Report (PDF) | TODO: add the file or link |
 
 ## Problem
 Automatically assign a Kirundi news article to one of 12 topics: politics, sport, economy, health, entertainment, history, technology, culture, religion, environment, education, relationship. Kirundi is a low-resource Bantu language, mutually intelligible with Kinyarwanda.
@@ -78,7 +77,7 @@ python src/compare_bootstrap.py --a results/preds_tfidf_char_svm_raw.csv --a_nam
 4. Run locally with `MODEL_ID=delucie/kirundi-news-afroxlmr python app/app.py`.
 
 ## Existing resources vs own work
-Used: KIRNEWS data, XLM-R and AfroXLMR weights, scikit-learn, Transformers, PyTorch, Gradio, Kaggle GPUs, Hugging Face Hub. Implemented by me: data audit and cleaning, baselines, fine-tuning pipeline, experiments, bootstrap analysis, error analysis, web app. An AI assistant (Claude) helped write and debug code and draft the report; I ran and checked all experiments (see the report's declaration).
+Used: KIRNEWS data, XLM-R and AfroXLMR weights, scikit-learn, Transformers, PyTorch, Gradio, Kaggle GPUs, Hugging Face Hub. Implemented by me: data audit and cleaning, baselines, fine-tuning pipeline, experiments, bootstrap analysis, error analysis, web app. An AI assistant (Claude) helped debug code; I ran and checked all experiments (see the report's declaration).
 
 ## References
 Niyongabo et al. (2020) KINNEWS and KIRNEWS, COLING. Conneau et al. (2020) XLM-R, ACL. Alabi et al. (2022) AfroXLMR, COLING. Berg-Kirkpatrick et al. (2012) significance testing in NLP, EMNLP. Full list in the report.
