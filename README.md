@@ -6,7 +6,7 @@ Individual NLP capstone (Summative Project Sep26): classify Kirundi news article
 | Resource | Link |
 |---|---|
 | GitHub repository | https://github.com/Delucie-Rurangwa/kirundi-news-classification |
-| Live system (Hugging Face Space) | TODO: paste the Space link |
+| Live system (Hugging Face Space) | https://huggingface.co/spaces/delucie/kirundi-news-demo |
 | Fine-tuned model | https://huggingface.co/delucie/kirundi-news-afroxlmr |
 | Demo video | TODO: paste the video link |
 | Report (PDF) | TODO: add the file or link |

@@ -13,7 +13,7 @@ import gradio as gr
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
-MODEL_ID = os.environ.get("MODEL_ID", "YOUR_HF_USERNAME/kirundi-news-afroxlmr")
+MODEL_ID = os.environ.get("MODEL_ID", "delucie/kirundi-news-afroxlmr")
 MAX_LEN = 256            # same truncation length used in training (first 256 tokens)
 MIN_WORDS = 5            # refuse near-empty input
 LOW_CONFIDENCE = 0.50    # below this we warn the user
