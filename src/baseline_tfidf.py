@@ -81,18 +81,23 @@ def main(args):
         # B. stratified 5-fold CV on all deduplicated articles
         allx = pd.concat([tr, va, te], ignore_index=True)
         f1s, accs = [], []
-        for a, b in StratifiedKFold(5, shuffle=True, random_state=SEED).split(allx.text, allx.y):
+        folds = [] if args.skip_cv else StratifiedKFold(5, shuffle=True, random_state=SEED).split(allx.text, allx.y)
+        for a, b in folds:
             mm = make_model(kind).fit(allx.text[a], allx.y[a])
             p = mm.predict(allx.text[b])
             s = scores(allx.y[b], p)
             f1s.append(s["macro_f1"]); accs.append(s["accuracy"])
-        r["cv5_macro_f1_mean_std"] = [round(float(np.mean(f1s)), 4), round(float(np.std(f1s)), 4)]
-        r["cv5_accuracy_mean_std"] = [round(float(np.mean(accs)), 4), round(float(np.std(accs)), 4)]
-        # C. leaky official split
-        mo = make_model(kind).fit(otr.text, otr.y)
-        r["official_leaky_test"] = scores(ote.y, mo.predict(ote.text))
+        if not args.skip_cv:
+            r["cv5_macro_f1_mean_std"] = [round(float(np.mean(f1s)), 4), round(float(np.std(f1s)), 4)]
+            r["cv5_accuracy_mean_std"] = [round(float(np.mean(accs)), 4), round(float(np.std(accs)), 4)]
+            # C. leaky official split
+            mo = make_model(kind).fit(otr.text, otr.y)
+            r["official_leaky_test"] = scores(ote.y, mo.predict(ote.text))
         results[kind] = r
-        print(kind, json.dumps(r))
+        print(kind, json.dumps(r), flush=True)
+        # save ALL test predictions (needed for the bootstrap comparison with the Transformer)
+        allp = te.assign(pred=[CLASS_NAMES[p] for p in pred_te])
+        allp[["label_name", "pred"]].to_csv(out / f"preds_{kind}_{v}.csv", index=False)  # no article text (copyright)
 
         if kind == args.report_model:
             rep = classification_report(te.y, pred_te, labels=labels,
@@ -120,7 +125,8 @@ def main(args):
             err["text"] = err.text.str.slice(0, 300)
             err.to_csv(out / f"errors_{kind}_{v}.csv", index=False)
 
-    (out / f"baseline_results_{v}.json").write_text(json.dumps(results, indent=2))
+    name = f"baseline_results_{v}_fast.json" if args.skip_cv else f"baseline_results_{v}.json"
+    (out / name).write_text(json.dumps(results, indent=2))
 
 
 if __name__ == "__main__":
@@ -129,4 +135,5 @@ if __name__ == "__main__":
     p.add_argument("--data_dir", default="data/processed")
     p.add_argument("--out_dir", default="results")
     p.add_argument("--report_model", default="tfidf_word+char_svm")
+    p.add_argument("--skip_cv", action="store_true", help="only fit/evaluate on the clean split and save predictions (fast)")
     main(p.parse_args())

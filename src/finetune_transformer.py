@@ -152,8 +152,7 @@ def main(a):
                 zero_division=0, output_dict=True)
             result["confusion_test"] = confusion_matrix(df.y, pred, labels=labels).tolist()
             err = df.assign(pred=[CLASS_NAMES[p] for p in pred])
-            err["text"] = err.text.str.slice(0, 300)
-            err[["label_name", "pred", "text"]].to_csv(out / f"preds_{name}.csv", index=False)
+            err[["label_name", "pred"]].to_csv(out / f"preds_{name}.csv", index=False)  # no article text (copyright)
 
     (out / f"result_{name}.json").write_text(json.dumps(result, indent=2))
     print(json.dumps({k: result[k] for k in ("name", "val", "test")}, indent=2))

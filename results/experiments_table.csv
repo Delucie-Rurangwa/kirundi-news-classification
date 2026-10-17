@@ -1,0 +1,5 @@
+config,runs,val_macro_f1_mean,test_macro_f1_mean,test_macro_f1_std,test_acc_mean
+E1_xlmr_base_len256,3,0.3921,0.3714,0.0147,0.7765
+E2_afroxlmr_base_len256,3,0.6596,0.7015,0.0242,0.9076
+E3_afroxlmr_base_len256_wloss,3,0.7608,0.7664,0.0066,0.9213
+E4_afroxlmr_base_len512_wloss,3,0.7424,0.7398,0.0147,0.9276

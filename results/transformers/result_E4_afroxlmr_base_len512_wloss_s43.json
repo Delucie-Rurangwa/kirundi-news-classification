@@ -1,0 +1,279 @@
+{
+  "name": "E4_afroxlmr_base_len512_wloss_s43",
+  "model": "Davlan/afro-xlmr-base",
+  "max_len": 512,
+  "lr": 3e-05,
+  "epochs_requested": 12,
+  "batch": 8,
+  "grad_accum": 2,
+  "weighted_loss": true,
+  "seed": 43,
+  "version": "raw",
+  "val": {
+    "accuracy": 0.8722,
+    "macro_f1": 0.7511,
+    "weighted_f1": 0.8716
+  },
+  "test": {
+    "accuracy": 0.9288,
+    "macro_f1": 0.7548,
+    "weighted_f1": 0.9282
+  },
+  "per_class_test": {
+    "politics": {
+      "precision": 0.945054945054945,
+      "recall": 0.9347826086956522,
+      "f1-score": 0.9398907103825137,
+      "support": 92.0
+    },
+    "sport": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 85.0
+    },
+    "economy": {
+      "precision": 0.8620689655172413,
+      "recall": 0.8928571428571429,
+      "f1-score": 0.8771929824561403,
+      "support": 28.0
+    },
+    "health": {
+      "precision": 0.8235294117647058,
+      "recall": 0.875,
+      "f1-score": 0.8484848484848485,
+      "support": 16.0
+    },
+    "entertainment": {
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1-score": 0.9,
+      "support": 10.0
+    },
+    "history": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "technology": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 5.0
+    },
+    "culture": {
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.3333333333333333,
+      "support": 3.0
+    },
+    "religion": {
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "f1-score": 0.4,
+      "support": 2.0
+    },
+    "environment": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 4.0
+    },
+    "education": {
+      "precision": 0.9090909090909091,
+      "recall": 0.8333333333333334,
+      "f1-score": 0.8695652173913043,
+      "support": 12.0
+    },
+    "relationship": {
+      "precision": 0.8888888888888888,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.8888888888888888,
+      "support": 9.0
+    },
+    "accuracy": 0.9288389513108615,
+    "macro avg": {
+      "precision": 0.7496083155819463,
+      "recall": 0.7631829422590294,
+      "f1-score": 0.7547796650780859,
+      "support": 267.0
+    },
+    "weighted avg": {
+      "precision": 0.9282217758184664,
+      "recall": 0.9288389513108615,
+      "f1-score": 0.9282467754622339,
+      "support": 267.0
+    }
+  },
+  "confusion_test": [
+    [
+      86,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      85,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      25,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      14,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      9,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      10,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      8
+    ]
+  ]
+}
