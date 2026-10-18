@@ -8,7 +8,7 @@ Individual NLP capstone (Summative Project Sep26): classify Kirundi news article
 | GitHub repository | https://github.com/Delucie-Rurangwa/kirundi-news-classification |
 | Live system (Hugging Face Space) | https://huggingface.co/spaces/delucie/kirundi-news-demo |
 | Fine-tuned model | https://huggingface.co/delucie/kirundi-news-afroxlmr |
-| Demo video | TODO: paste the video link |
+| Demo video | https://www.awesomescreenshot.com/video/57562867|
 
 ## Problem
 Automatically assign a Kirundi news article to one of 12 topics: politics, sport, economy, health, entertainment, history, technology, culture, religion, environment, education, relationship. Kirundi is a low-resource Bantu language, mutually intelligible with Kinyarwanda.
